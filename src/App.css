@@ -1,0 +1,144 @@
+body {
+  background-image: url('./assets/background.jpg');
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+.header {
+  width: 20rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image {
+  width: 100px;
+}
+
+.error {
+  color: white;
+}
+
+.container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  text-align: left;
+  padding: 1rem;
+  background-color: #cc9966;
+  box-shadow: 5px 5px 20px 5px #000000;
+  margin-bottom: 2rem;
+}
+
+.item p {
+  color: white;
+}
+
+.selectContainer {
+  margin-bottom: 2rem;
+  text-align: left;
+  background-color: #996633;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.selectContainer input {
+  width: 10rem;
+  padding: 0.5rem;
+  border: none;
+}
+
+.title {
+  font-weight: 800;
+  color: white;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-weight: 500;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+label {
+  color: white;
+  font-weight: 500;
+}
+
+button {
+  border: none;
+  padding: 0.5rem;
+  width: 7rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+}
+
+select {
+  border: none;
+  padding: 0.5rem;
+  width: 8rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+
+.noResults {
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: #996633;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 821px) {
+  .selectContainer {
+    margin-bottom: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  label {
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .selectContainer input {
+    width: 96%;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+}
