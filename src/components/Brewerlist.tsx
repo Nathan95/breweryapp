@@ -18,11 +18,9 @@ type Breweries = {
 
 function Brewerlist() {
   const [breweries, setBreweries] = useState<Breweries[]>([]);
-  const [error, setError] = useState<any>(null);
   const [sortType, setSortType] = useState<string>("");
   const [sortValue, setSortValue] = useState<string>("");
   const [sortValueEmpty, setSortValueEmpty] = useState<boolean>(false);
-  const [noResults, setNoResults] = useState<boolean>(false);
 
   const location = useLocation();
   const history = useHistory();
@@ -91,7 +89,6 @@ function Brewerlist() {
 
  const hideError = () => {
   setSortValueEmpty(false)
-  setNoResults(false);
  }
 
  const refreshResults = () => {
@@ -129,7 +126,7 @@ function Brewerlist() {
         <div className="selectContainer">
           <label htmlFor="type">Sort by: </label>
           <select name="type" defaultValue="" data-testid="select" onChange={handleSort}> 
-            <option value="" selected defaultValue="Sort By" disabled hidden>Sort By</option>
+            <option value="" selected defaultValue="Sort By:" disabled hidden>Sort By</option>
             <option data-testid="type-option" value="state">State</option>
             <option data-testid="type-option" value="brewery_type">Brewery Type</option>
           </select>
