@@ -45,8 +45,25 @@ function Brewerlist() {
     }
   }
 
+  const filterValues = (array: any) => array.filter((v: any, i:any) => breweries.indexOf(v) === i);
+
+  const fetchDataAnother50 = async () => {
+    
+    try {
+      const res = await axios.get("https://api.openbrewerydb.org/breweries?by_state=ohio&per_page=50");
+
+      setBreweries(prevState => [
+        ...prevState, ...res.data
+      ]);
+
+      } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     fetchData();
+    fetchDataAnother50();
     history.push(`${path}?page=${currentPage}`);
   }, [history, path]);
 
@@ -99,7 +116,7 @@ function Brewerlist() {
   const mapBreweries = () => {
       return (
         <React.Fragment>
-          {currentOrders.map((item: Breweries) => (
+          {breweries.map((item: Breweries) => (
               <div className="item" key={item.id}>
                 <ul>
                   <li><span className="title">Name:</span>{item.name || "N/A"}</li>
@@ -137,11 +154,11 @@ function Brewerlist() {
           {sortValueEmpty ? <span className="error"> Please add a value</span> : null}
         </div>
             {mapBreweries()}
-            <Pagination
+            {/* <Pagination
               ordersPerPage={ordersPerPage}
               ordersAmount={breweries?.length}
               paginate={paginate}
-            />
+            /> */}
         </div>
       </React.Fragment>
     );
