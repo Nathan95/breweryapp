@@ -88,12 +88,14 @@ function Brewerlist() {
   } 
   if(type === "brewery_type") {
     try { 
-        fetcher("https://api.openbrewerydb.org/breweries?per_page=50&", "type", value)
+        fetcher("https://api.openbrewerydb.org/breweries?per_page=50&page=2", "type", value)
       } catch (error) {
         console.log(error);
     }
   }
  }
+
+ console.log(breweries)
 
  //handlers
  const handleSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
